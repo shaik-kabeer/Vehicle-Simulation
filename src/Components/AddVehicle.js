@@ -38,6 +38,8 @@ const AddVehicle = () => {
       return;
     }
 
+
+    
     const vehicleWithId = { ...vehicle, id: uuidv4() };
 
     axios.get(`http://localhost:5000/scenarios/${selectedScenario}`)
