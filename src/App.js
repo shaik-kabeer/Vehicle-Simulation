@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Sidebar from './Components/Sidebar';
+import ScenarioList from './Components/ScenarioList';
+import AddScenario from './Components/AddScenario';
+import AddVehicle from './Components/AddVehicle';
+import HomePage from './Components/HomePage';
+import EditScenarioForm from './Components/EditScenarioForm';
 import './App.css';
 
-function App() {
-  return (
+const App = () => (
+  <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar />
+      <div className="main-content">
+        <Routes>
+          <Route path="/add-scenario" element={<AddScenario />} />
+          <Route path="/scenarios" element={<ScenarioList />} />
+          <Route path="/add-vehicle" element={<AddVehicle />} />
+          <Route path="/edit-Scenario" element={<EditScenarioForm/>} />
+          <Route path="/" element={<HomePage />} exact />
+        </Routes>
+      </div>
     </div>
-  );
-}
+  </Router>
+);
 
 export default App;

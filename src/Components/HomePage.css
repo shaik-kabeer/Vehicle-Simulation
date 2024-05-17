@@ -1,0 +1,195 @@
+/* HomePage.css */
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    /* background-color: #; */
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  html, body {
+    height: 100%;
+    background-color: #ccc;
+  }
+  
+  /* Container for sidebar and main content */
+  .container {
+    background-color: #ccc;
+    display: flex;
+    flex: 1;
+    min-height: 100%; /* Ensures container takes at least the full viewport height */
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    background-color: #333;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    height: 100%; /* Takes the full height of the container */
+    position: sticky;
+    top: 0;
+  }
+  
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .sidebar a:hover {
+    background-color: #575757;
+    padding: 10px;
+  }
+  
+  /* Main content styling */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Allows the main content to scroll if it overflows */
+  }
+  
+  /* Page title */
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  /* Dropdown styling */
+  select {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    max-width: 300px;
+    width: 100%;
+  }
+  
+  /* Button styling */
+  button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  input{
+    color: #fff;
+    font-size: larger;
+  }
+  button:disabled {
+    background-color: #ccc;
+  }
+  
+  button:hover:enabled {
+    background-color: #0056b3;
+  }
+  
+  /* Table styling */
+  table {
+    color: #fff;
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  table thead {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  table th, table td {
+    justify-content: center;
+    justify-items: center;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  table th, table td{
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* Simulation container styling */
+  .simulation-container {
+    width: 155%;
+    height: 500px;
+    margin: 20px auto;
+    position: relative;
+    border: 2px solid #ccc;
+    background: #333;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* overflow: hidden; */
+  }
+  
+  .simulation-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: 700px;
+    height: 400px; */
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, green 1px, transparent 1px),
+                      linear-gradient(to bottom, green 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-color: #333;
+  }
+  
+  /* Vehicle styling */
+  .vehicle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 12px;
+    transition: transform 0.1s ease;
+  }
+  
+  .vehicle.Towards {
+    transform: rotate(0deg);
+    background-color: red;
+  }
+  
+  .vehicle.Backwards {
+    transform: rotate(180deg);
+    background-color: green
+  }
+  
+  .vehicle.Upwards {
+    transform: rotate(270deg);
+    background-color: gold
+  }
+  
+  .vehicle.Downwards {
+    background-color: silver;
+    transform: rotate(90deg);
+  }
+  
